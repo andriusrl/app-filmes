@@ -7,7 +7,7 @@ export function Home() {
     <View style={styles.container}>
       <Text style={styles.headerText}>Oque você quer assistir hoje</Text>
       <View style={styles.containerInput}>
-        <TextInput placeholder="Buscar" style={styles.input} />
+        <TextInput placeholderTextColor="#FFF" placeholder="Buscar" style={styles.input} />
         <MagnifyingGlass color="#FFF" size={25} weight="light" />
       </View>
     </View>
