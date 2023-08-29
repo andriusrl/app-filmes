@@ -4,6 +4,11 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#242A32",
+  },
+  containerList:{
+    // justifyContent: "center"
+  },
+  header: {
     padding: 25,
   },
   headerText: {
@@ -26,6 +31,6 @@ export const styles = StyleSheet.create({
   input: {
     color: "#FFF",
     width: "80%",
-    paddingLeft: 15
+    paddingLeft: 15,
   },
 });
