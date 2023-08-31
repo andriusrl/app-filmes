@@ -58,6 +58,7 @@ export function Home() {
             alignItems: "center",
           }}
           onEndReached={() => loadMoreData()}
+          onEndReachedThreshold={0.5} // no momento que chegar no meio da lista já começa a carregar outra página e mantem filmes que já tinham
         />
       </View>
     </View>
