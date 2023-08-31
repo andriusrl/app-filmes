@@ -14,14 +14,20 @@ interface Movie {
 
 export function Home() {
   const [discoveryMovies, setDiscoveryMovies] = useState<Movie[]>([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     loadMoreData();
   }, []);
 
   const loadMoreData = async () => {
-    const response = await api.get("/movie/popular");
-    setDiscoveryMovies(response.data.results);
+    const response = await api.get("/movie/popular", {
+      params: {
+        page,
+      },
+    });
+    setDiscoveryMovies([...discoveryMovies, ...response.data.results]);
+    setPage(page + 1);
   };
 
   return (
@@ -46,9 +52,12 @@ export function Home() {
           keyExtractor={(item) => item.id.toString()}
           contentContainerStyle={{
             paddingTop: 35,
-            paddingBottom: 100,
-            alignItems: "center"
+            // height: "auto",
+            paddingBottom: 300,
+            // backgroundColor: "blue",
+            alignItems: "center",
           }}
+          onEndReached={() => loadMoreData()}
         />
       </View>
     </View>
