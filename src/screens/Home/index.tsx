@@ -51,8 +51,9 @@ export function Home() {
       },
     });
 
-    if (response.data.results.lenght === 0) {
+    if (response.data.results.length === 0) {
       setLoading(false);
+      console.log('está zerado')
       return setNoResult(true);
     }
     setLoading(false);
@@ -83,6 +84,11 @@ export function Home() {
           />
           <MagnifyingGlass color="#FFF" size={25} weight="light" />
         </View>
+        {noResult && (
+          <Text>
+            Nenhum filmes encontrado para "{search}"
+          </Text>
+        )}
       </View>
       <View style={styles.containerList}>
         <FlatList
