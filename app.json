@@ -21,6 +21,11 @@
         "wasm",
         "svg"
       ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "59d2ee74-b44c-4cb9-8596-d05c07cf2834"
+      }
     }
   }
 }
