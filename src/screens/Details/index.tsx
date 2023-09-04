@@ -1,6 +1,7 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute, ParamListBase } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import { api } from "../../services/api";
 import {
   BookBookmark,
@@ -30,7 +31,7 @@ export function Details() {
 
   const [loading, setLoading] = useState(false);
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
   const route = useRoute();
   const { movieId } = route.params as RouterProps;
