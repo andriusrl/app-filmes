@@ -1,4 +1,4 @@
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { api } from "../../services/api";
@@ -30,6 +30,8 @@ export function Details() {
 
   const [loading, setLoading] = useState(false);
 
+  const navigation = useNavigation();
+
   const route = useRoute();
   const { movieId } = route.params as RouterProps;
 
@@ -56,7 +58,7 @@ export function Details() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
           <CaretLeft color="#FFF" size={32} weight="thin" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Detalhes</Text>
