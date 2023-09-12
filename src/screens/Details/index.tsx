@@ -77,9 +77,8 @@ export function Details() {
         <TouchableOpacity>
           <BookBookmark color="#FFF" size={32} weight="thin" />
         </TouchableOpacity>
-
-        {loading && <ActivityIndicator size="large" color="#FFF" />}
       </View>
+      {loading && <ActivityIndicator size="large" color="#FFF" />}
       {!loading && (
         <>
           <View>
